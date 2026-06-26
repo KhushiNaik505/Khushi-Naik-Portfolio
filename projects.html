@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <meta name="description" content="Khushi's Portfolio"/>
+        <title>Khushi Naik| Front End Developer
+        </title>
+        <link rel="stylesheet" href="style.css" />  
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header role="banner">
+            <div class="logo">
+                <a href="index.html" aria-label="Go back to Home page">Khushi Naik</a> 
+            </div>
+            <nav aria-label="Primary Navigation">
+                <ul role="list">
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="about.html" >About</a></li>
+                    <li><a href="projects.html" aria-current="page">Projects</a></li>
+                    <li><a href="contact.html" >Contact</a></li>
+
+             </ul>
+            </nav>
+        </header>
+        <main id="main-content">
+ <section aria-labelledby="project-heading">
+<h3 id="project-heading" style="font-family: monospace;">//WHAT I'VE BUILT</h3>
+<h1 id="project-heading" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: bold; letter-spacing: 3px;">Projects<br><span style="font-family:Serif;">& Experiments</span></h1>
+<p>A small but growing collection. Every project is one commit closer to something real.</p>
+
+<div class="filter-buttons" role="group" aria-label="Filter projects by category">
+<button class="filter-btn" data-filter="all">All</button>
+<button class="filter-btn" data-filter="data-analytics">Data Science and Analytics</button>
+<button class="filter-btn" data-filter="web-development">Web Development</button>
+</div>
+
+<div class="Project-Container">
+
+   <div class="data-analytics">
+
+    <div class="project-1" data-category="data-analytics" style="background-color: #c0e8f5; border-radius: 10px; width:400px; padding:20px;">
+<h2 id="data-analytics">Global Sales and Profitability Intelligence Dashboard</h2>
+<p> Used SQL queries and DAX to analyze a global sales dataset, tracking revenue, profit margins, and regional KPIs.
+<br>Applied ETL transformations enabling drill-down analysis across product categories, regions, and time periods</p>
+<a href="https://github.com/KhushiNaik505/Global-Sales-Profitability-Intelligence-Dashboard" target="_blank" rel="noopener noreferrer">View on Github<img src="https://cdn-icons-png.flaticon.com/128/25/25657.png" width="15px" style="margin-left:5px;"></a><br>
+</div>
+
+<div class="project-2" data-category="data-analytics" style="background-color: #c0e8f5; border-radius: 10px; width:400px; padding:20px;">
+<h2 id="data-analytics">Medical Insurance-Google Colab</h2>
+<p>Performed EDA and statistical modeling on a 1,300+ record dataset using Pandas to identify key cost drivers.
+<br>Built a regression model with feature engineering and correlation analysis, achieving measurable RMSE-based accuracy.</p>
+<a href="https://github.com/KhushiNaik505/Weather-Dashboard" target="_blank" rel="noopener noreferrer">View on Github<img src="https://cdn-icons-png.flaticon.com/128/25/25657.png" width="15px" style="margin-left:5px;"></a><br>
+</div>
+
+</div>
+
+<div class="web-development">
+
+<div class="project-3" data-category="web-development" style="background-color: #c0e8f5; border-radius: 10px; width:400px; padding:20px;">           
+<h2 id="web-development">Weather Dashboard</h2>
+<p> A responsive weather app delivering real-time conditions and a 5-day forecast for any city, powered by the OpenWeather API — built with vanilla HTML, CSS, and JavaScript.
+</p>
+<a href="https://github.com/KhushiNaik505/Weather-Dashboard" target="_blank" rel="noopener noreferrer">View on Github<img src="https://cdn-icons-png.flaticon.com/128/25/25657.png" width="15px" style="margin-left:4px;"></a><br>
+<a href="https://khushinaik505.github.io/Weather-Dashboard/" target="_blank" rel="noopener noreferrer">Live Demo<img src="https://cdn-icons-png.flaticon.com/128/3314/3314260.png" width="10px" style="margin-left:3px;"></a></div>
+
+<div class="project-4" data-category="web-development" style="background-color: #c0e8f5; border-radius: 10px; width:400px; padding:20px;">
+<h2 id="web-development">E-Commerce Product Catalog</h2>
+<p>A responsive product catalog with client-side routing, live search, and a fully functional shopping cart — built with vanilla HTML, CSS, and JavaScript, optimized with a custom build pipeline, and deployed live on Netlify.</p>
+<a href="https://github.com/KhushiNaik505/E-commerce-Catalog" target="_blank" rel="noopener noreferrer">View on Github<img src="https://cdn-icons-png.flaticon.com/128/25/25657.png" width="15px" style="margin-left:5px;"></a><br>
+<a href="https://khushinaik-shop.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo<img src="https://cdn-icons-png.flaticon.com/128/3314/3314260.png" width="10px" style="margin-left:3px;"></a></div>
+</div>
+
+
+</div>
+
+</section>
+</main>
+<footer role="contentinfo">
+            
+            <nav aria-label="Footer navigation">
+            <ul role="list">
+                 <li><a href="mailto:khushinaik505@gmail.com" aria-label="Email Khushi">✉ Draft an email</a></li>
+            <li><a href="https://www.linkedin.com/in/khushinaik505/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></li>
+
+            </ul>
+
+        </nav>
+        <p>&copy; Khushi Naik. All rights reserved</p>
+        </footer>
+
+        <script>
+            const filterButtons = document.querySelectorAll('.filter-btn');
+const projects = document.querySelectorAll('div[data-category]');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', function () {
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    this.classList.add('active');
+
+    const filter = this.getAttribute('data-filter');
+    projects.forEach(project => {
+      if (filter === 'all' || project.getAttribute('data-category') === filter) {
+        project.classList.remove('hidden');
+      } else {
+        project.classList.add('hidden');
+      }
+    });
+  });
+});
+        </script>
+    </body>
+</html>
